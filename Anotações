@@ -1,0 +1,12 @@
+Atalhos Emmet
+html:5  abre página html
+
+Atalhos teclado
+ctrl + /  comentar
+ctrl shift c  abrir inspecionar elemento (navegador)
+
+Anotações gerais
+no debugger (inspecionar) se clicar em um item para edição e usar setas pra cima e baixo voce decrementa/incrementa valores. segurar shift ajuste +/= 10 px e sem shift +/- 1px (ajuste fino)
+vh = viewport height
+
+alt + setapra cimae baixo muda linha de lugar
