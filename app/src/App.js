@@ -25,7 +25,7 @@ class App extends React.Component {
     axios({
       method: "GET",
       url:
-        "https://www.anapioficeandfire.com/api/characters?page=2&pageSize=9000"
+        "https://www.anapioficeandfire.com/api/characters?page=7&pageSize=1000"
     }).then(response => {
       this.setState(state => ({
         characters: response.data,
