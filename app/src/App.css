@@ -1,0 +1,158 @@
+:root {
+  --themeColor:  rgb(250, 0, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.appRoot__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("gotelmo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.characterCard {
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 40px;
+  border-radius: 10px;
+  max-height: 50vh;
+  flex-grow: 1;
+  position: relative;
+}
+
+.characterCard.--cardOut {
+  animation: cardOut 1s ease forwards;
+}
+
+.characterCard.--cardIn {
+  animation: cardIn 1s ease forwards;
+}
+
+.characterCard.--isLoading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  border-radius: 10px;
+  }
+
+.characterCard.--isLoading::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid var(--themeColor);
+  position: absolute;
+  z-index: 1;
+  border-right-color: transparent;
+  animation: spin 0.5s linear infinite;
+  top: 50%;
+  left: 50%;
+}
+
+.characterCard-header__wrapper {
+  background-color: var(--themeColor);
+  max-width: 100%;
+  margin: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.characterCard-header__wrapper.--isDead::after {
+  content: "☠";
+  font-size: 2.5rem;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.characterCard-body {
+  margin-left: 38px;
+  list-style: none;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.charaterCard-seasonsAppereance {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.nextButton {
+  background-color: var(--themeColor);
+  border: none;
+  font-size: 2rem;
+  padding: 20px 10;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.25s;
+}
+
+.nextButton:hover {
+  background-color: rgb(218, 11, 11);
+}
+
+.nextButton:active {
+  transform: scale(0.98);
+}
+
+@keyframes cardOut {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(0.6);
+      opacity: 0;
+  }
+}
+
+@keyframes cardIn {
+  0% {
+      transform: scale(1.6);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+      transform: translate(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+      transform: translate(-50%) translateY(-50%) rotate(360deg);
+  }
+}
